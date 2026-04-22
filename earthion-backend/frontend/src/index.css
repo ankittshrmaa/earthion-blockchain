@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Bone color utility classes */
+@layer utilities {
+  .bg-bone-50 { background-color: #fafaf8; }
+  .bg-bone-100 { background-color: #f5f5f0; }
+  .bg-bone-200 { background-color: #e8e8e3; }
+  .bg-bone-300 { background-color: #d9d9d2; }
+  .bg-bone-400 { background-color: #c4c4b8; }
+  .bg-bone-500 { background-color: #a8a89b; }
+
+  .text-bone-500 { color: #a8a89b; }
+
+  .border-bone-200 { border-color: #e8e8e3; }
+  .border-bone-300 { border-color: #d9d9d2; }
+
+  .hover\:bg-bone-300:hover { background-color: #d9d9d2; }
+
+  /* Cream colors - now pure white */
+  .bg-cream-50 { background-color: #ffffff; }
+  .bg-cream-100 { background-color: #fafafa; }
+  .bg-cream-200 { background-color: #f5f5f5; }
+
+  .border-cream-100 { border-color: #fafafa; }
+
+  /* Earthion Green - #0cc930 */
+  .text-earthion { color: #0cc930; }
+  .bg-earthion { background-color: #0cc930; }
+  .border-earthion { border-color: #0cc930; }
+  .hover\:text-earthion:hover { color: #0cc930; }
+  .hover\:bg-earthion:hover { background-color: #0cc930; }
+}
+
+/* Custom component styles - using pure CSS instead of @apply for custom colors */
+@layer components {
+  .card {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e3;
+    padding: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+  }
+
+  .card-hover {
+    background-color: #ffffff;
+    border: 1px solid #e8e8e3;
+    padding: 1rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .card-hover:hover {
+    border-color: #0cc930;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: #0cc930;
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: #00b329;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    background-color: #e8e8e3;
+    color: #374151;
+  }
+
+  .btn-secondary:hover {
+    background-color: #d9d9d2;
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
+
+  .input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid #e8e8e3;
+    border-radius: 0.5rem;
+    background-color: #fff;
+  }
+
+  .input:focus {
+    outline: none;
+    ring: 2px solid #0cc930;
+    border-color: transparent;
+  }
+
+  /* Header styles */
+  .header {
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(4px);
+    border-bottom: 1px solid #e8e8e3;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  /* Footer styles */
+  .footer {
+    background-color: #d9d9d2;
+    color: #a8a89b;
+    padding: 3rem 0;
+  }
+
+  /* Hero gradient */
+  .hero-gradient {
+    background: linear-gradient(135deg, #f0fdf4 0%, #f5f5f0 40%, #e8e8e3 60%, #dcfce7 100%);
+    min-height: 100vh;
+  }
+}
+
+/* Custom animations */
+@layer utilities {
+  .animate-spin {
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  @keyframes loading {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .5; }
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* Subtle pattern overlay */
+  .pattern-dots {
+    background-image: radial-gradient(circle, #0cc930 1px, transparent 1px);
+    background-size: 24px 24px;
+    opacity: 0.03;
+  }
+}

@@ -1,0 +1,29 @@
+# Blackbox CLI
+.blackboxcli/
+
+# Build binaries
+/earthion
+/main
+/bin/
+
+# Data files (blockchain state)
+/blockchain.dat
+/wallet.dat
+
+# Go
+*.sum
+vendor/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.local
